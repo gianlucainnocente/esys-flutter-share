@@ -22,6 +22,8 @@ public class SwiftEsysFlutterSharePlugin: NSObject, FlutterPlugin {
     }
     
     func text(arguments:Any?) -> Void {
+        debugPrint("share text");
+        
         // prepare method channel args
         // no use in ios
         //// let title:String = argsMap.value(forKey: "title") as! String
@@ -34,11 +36,14 @@ public class SwiftEsysFlutterSharePlugin: NSObject, FlutterPlugin {
         // present the view controller
         let controller = UIApplication.shared.keyWindow!.rootViewController as! FlutterViewController
         activityViewController.popoverPresentationController?.sourceView = controller.view
+        activityViewController.popoverPresentationController?.sourceRect = CGRect(x: controller.view.bounds.midX, y: controller.view.bounds.maxY, width: 0, height: 0)
         
         controller.show(activityViewController, sender: self)
     }
     
     func file(arguments:Any?) -> Void {
+        debugPrint("share file single");
+        
         // prepare method channel args
         // no use in ios
         //// let title:String = argsMap.value(forKey: "title") as! String
@@ -63,11 +68,13 @@ public class SwiftEsysFlutterSharePlugin: NSObject, FlutterPlugin {
         // present the view controller
         let controller = UIApplication.shared.keyWindow!.rootViewController as! FlutterViewController
         activityViewController.popoverPresentationController?.sourceView = controller.view
+        activityViewController.popoverPresentationController?.sourceRect = CGRect(x: controller.view.bounds.midX, y: controller.view.bounds.maxY, width: 0, height: 0)
         
         controller.show(activityViewController, sender: self)
     }
     
     func files(arguments:Any?) -> Void {
+        debugPrint("share files multi");
         // prepare method channel args
         // no use in ios
         //// let title:String = argsMap.value(forKey: "title") as! String
@@ -95,6 +102,7 @@ public class SwiftEsysFlutterSharePlugin: NSObject, FlutterPlugin {
         // present the view controller
         let controller = UIApplication.shared.keyWindow!.rootViewController as! FlutterViewController
         activityViewController.popoverPresentationController?.sourceView = controller.view
+        activityViewController.popoverPresentationController?.sourceRect = CGRect(x: controller.view.bounds.midX, y: controller.view.bounds.maxY, width: 0, height: 0)
         
         controller.show(activityViewController, sender: self)
     }
